@@ -1,6 +1,6 @@
 /* --------------- Component Main Navigation Horizontal ----------- */
 
-// Module Main_Navigation_Horizontal (mNav)
+// Component: Main_Navigation_Horizontal (mNav)
 // Author: Pieternel de Jonge
 // Date last changed: 06/02/2020
 
@@ -118,7 +118,6 @@
 .mNav__topListItem:focus-within .mNav__topListLink:not(:only-child) {position: relative;}
 .mNav__topListItem:hover .mNav__topListLink:not(:only-child) {position: relative;}
 
-// (pointer-events: none;) prevents the arrow from being selectable focusable ???
 .mNav__topListItem:focus-within .mNav__topListLink:not(:only-child)::after,
 .mNav__topListItem:focus-within .mNav__topListLink:not(:only-child)::before {
   content: "";
@@ -186,14 +185,13 @@
 .mNav {
   &__subList {
     background: $menucolor-bg;
-  //  z-index: 0;
     display: inline-flex;
     flex-direction: column;
     position: absolute;
     top: 100%;
     width: calc(100% + 2px);
     border: 1px solid #333;
-    // I do not use display none or visibility hidden, I want to have the subList visible, in case javascript and/or css are disabled
+    // I do not use display none or visibility hidden, I want to have the subList visible in case javascript and/or css are disabled
     left: -200vw;
     padding: 20px 0;
     border-radius: 0 0 10px 10px;
@@ -203,7 +201,7 @@
   // This mimicks a general sibling selector (which doesn't exist).
   // Normally if there is focus on a listLink and you switch to using a mouse (hover), the subList that is focused will still be visible.
   // This statement prevents that two different subLists will be visible at the same time.
-  // If you hover over the topList, the topListItems that is not hovered
+  // If you hover over the topList, the topListItems that is not hovered will not show, even if it has focus.
   &__topList:hover > &__topListItem:not(:hover) &__subList {left: -200vw;}
 
   &__topListItem:focus-within &__subList {left: -1px;}
@@ -275,11 +273,13 @@
   &__subList:hover .mNav__subListLink:not(:hover) .mNav__subListSpan {background-position: 8px 1px;}
 }
 
-  /* --------------- End Component - Horizontal Main Navigation ----------- */ 
+  /* --------------- End component - Main_Navigation_Horizontal (mNav) ----------- */ 
 
 
 
 
   // Even uitzoeken waar dit voor is en of het nodig is. Positionering van subList ???
-  //  &__topListItem:focus-within &__topListLink:not(:only-child) {position: relative;}
-  // .mNav__topListItem:hover [class$=mNav__topListLink]:first-child:nth-last-child(2)
+  /*
+    .mNav__topListItem:focus-within &__topListLink:not(:only-child) {position: relative;}
+    .mNav__topListItem:hover [class$=mNav__topListLink]:first-child:nth-last-child(2)
+  */

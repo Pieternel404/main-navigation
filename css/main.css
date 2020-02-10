@@ -2081,7 +2081,11 @@ header {
   .mNav__subList:hover .mNav__subListLink:not(:hover) .mNav__subListSpan {
     background-position: 8px 1px;
   }
-  /* --------------- End Component - Horizontal Main Navigation ----------- */
+  /* --------------- End component - Main_Navigation_Horizontal (mNav) ----------- */
+  /*
+    .mNav__topListItem:focus-within &__topListLink:not(:only-child) {position: relative;}
+    .mNav__topListItem:hover [class$=mNav__topListLink]:first-child:nth-last-child(2)
+  */
 }
 
 main::before {
