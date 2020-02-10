@@ -1,4 +1,8 @@
-.wrapper {margin: 0px auto;}
+.wrapper {
+    margin: 0px auto;
+    border-left: 1px solid;
+    border-right: 1px solid;
+}
 
 .wrapperRow, .wrapperRowChild {padding: 1em;}
 .wrapperRowChild {margin: -1em;} /* This creates collapsing margins  */

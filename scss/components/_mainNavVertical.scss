@@ -19,6 +19,7 @@
     right: 1em;
     top: 40px;
 
+    // button pseudo-classes
     &:focus {
       outline: none;
     }
@@ -30,7 +31,7 @@
 // mNav topList elements
 .mNav {
   // topList
-  &__topList {padding: 97px 0 30px;}
+  &__topList {padding: 97px 0px 0px;}
   
   // topListItems
   &__topListItem {
@@ -143,7 +144,7 @@
 // <div class="icon-one">
 //  <div class="hamburger hamburger-one"></div>
 // </div>
-
+/*
 .hamburger {
   top:50%;
   left:10%;
@@ -164,7 +165,7 @@
   top: 16px;
 }
 
-
+*/
 
 /* Icon 1 */
 .icon-one {
