@@ -1,0 +1,131 @@
+// Adjusted Bootstrap 4 grid system - to facilatate spacing between columns with margins
+// Author: Pieternel404
+//
+// Generate semantic grid columns with these mixins.
+
+// https://gist.github.com/anschaef/d7552885c0e1f127cf8830d3bbf6e4b1
+
+// Formula in order to create columngaps with margins instead of paddings
+// (100 - ($grid-columns * (100 / $grid-columns - $col-gap-width))) / ($grid-columns * 2 - ($grid-columns - 1))
+// N.B.: afrondingsverschillen kunnen een probleem zijn -> dit voorkomen.
+// See: mixin make-col-ready() als voorbeeld. File location: mixins/_grid.scss
+
+// I also need to remove the margin-left on the columns positioned at the left side and
+// the margin-right on the columns positioned at the right side.
+
+// percentage is a sass function
+/*
+@mixin make-col-ready($gutter: $ggw) {
+  position: relative;
+  width: 100%;
+ // margin-right: 0.75%;
+  margin-right: percentage($gutter / 100);  
+  margin-left: percentage($gutter / 100);  
+}
+*/
+
+// $max-columns:        12;
+$total-gutter-width:   1 !default;
+// $grid-columns:         6 !default; 
+
+// $grid-gutter-width: (100 - ($grid-columns * (100 / $grid-columns - $col-gap-width))) / ($grid-columns * 2 - ($grid-columns - 1)) !default;
+// $grid-gutter-width: (100 - ($grid-columns * (100 / $grid-columns - $total-gutter-width))) / ($grid-columns * 2 - 2);
+// $ggw: (100 - (3 * (100 / 3 - 1))) / (3 * 2 - 2) !default;
+// $ggw: (100 - ($my-grid-colums * (100 / $my-grid-colums - $my-col-gap-width))) / ($my-grid-colums - 2);
+// $ggw: (100 - (3 * (100 / 3 - 1))) / (3 - 2) !default;
+// $grid-gutter-width: 30px;
+
+
+
+// Next challenge -> making a row width different col widths
+
+.btTest .myContainer {background-color: mediumaquamarine;}
+.btTest .myRow {background-color: lightblue;}
+// .btTest .myCard {background-color: lightblue;}
+
+
+
+@mixin make-container($gutter: $grid-gutter-width) {
+  width: 100%;
+  padding-right: $gutter / 2;
+  padding-left: $gutter / 2;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+// For each breakpoint, define the maximum width of the container in a media query
+/*
+@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      max-width: $container-max-width;
+    }
+  }
+}
+*/
+
+
+
+@mixin make-row($gutter: $grid-gutter-width) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$gutter / 2;
+  margin-left: -$gutter / 2;
+}
+
+$grid-gutter-width: (100 - ($grid-columns * (100 / $grid-columns - $total-gutter-width))) / ($grid-columns * 2 - 2);
+
+@mixin make-col-ready($gutter: $grid-gutter-width) {
+  position: relative;
+  // Prevent columns from becoming too narrow when at smaller grid tiers by
+  // always setting `width: 100%;`. This works because we use `flex` values
+  // later on to override this initial width.
+  width: 100%;
+//  padding-right: $gutter / 2;
+//  padding-left: $gutter / 2;
+  margin-right: $gutter / 2;
+  margin-left: $gutter / 2;
+}
+
+// $size is used to control the width of the columns.
+@mixin make-col($size, $columns: $grid-columns) {
+  $size: ((100 / $grid-columns - $total-gutter-width) * $grid-columns) / 100;
+  flex: 0 0 percentage($size / $columns);
+  // Add a `max-width` to ensure content within each column does not blow out
+  // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+  // do not appear to require this.
+  max-width: percentage($size / $columns);
+}
+
+h2::before {
+  content: "Er zijn #{$grid-columns} columns, met een gap van #{$grid-gutter-width} en een breedte van ???. De opgegeven spacing is #{$total-gutter-width}.";
+}
+
+
+/*
+@mixin make-col-auto() {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%; // Reset earlier grid tiers
+}
+
+@mixin make-col-offset($size, $columns: $grid-columns) {
+  $num: $size / $columns;
+  margin-left: if($num == 0, 0, percentage($num));
+}
+*/
+// Row columns
+//
+// Specify on a parent element(e.g., .row) to force immediate children into NN
+// numberof columns. Supports wrapping to new lines, but does not do a Masonry
+// style grid.
+
+/*
+@mixin row-cols($count) {
+  & > * {
+    flex: 0 0 100% / $count;
+    max-width: 100% / $count;
+  }
+}
+*/

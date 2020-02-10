@@ -1,0 +1,220 @@
+/* --------------- Component Main Navigation Vertical ----------- */
+
+// mNav General
+.mNav {
+  font: normal 1em/1 Arial, sans-serif;
+}
+
+/* --------------------------------------- */
+
+// rules for button
+.mNav [hidden] {display: none;}
+
+.mNav {
+  // button
+  &__button {
+    padding: 3px 1.5em 3px 0.5em;
+    border: 1px solid;
+    position: absolute;
+    right: 1em;
+    top: 40px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+/* --------------------------------------- */
+
+// mNav topList elements
+.mNav {
+  // topList
+  &__topList {padding: 97px 0 30px;}
+  
+  // topListItems
+  &__topListItem {
+    list-style: none;
+    border-bottom: 1px solid #333;
+    background-color: #cabdd7;
+
+    // topListItem pseudo-classes
+    &:first-child {border-top: 1px solid #333;}
+  }
+
+  // topListLinks 
+  &__topListLink {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 12px 10px 0px 0px;
+
+    // topListLink pseudo-classes
+/*    &:first-child:nth-last-child(2) {background: transparent url("../img/up_arrow.png") no-repeat right 10px center/1.5em;} */
+
+    &:focus,
+    &:hover {
+      outline: none;
+      text-decoration: underline;
+      background-color: #DDDADA;    
+    }
+
+    &:first-child:nth-last-child(2):hover,
+    &:first-child:nth-last-child(2):focus {background-color: #DDDADA;}
+
+  // topListLink modifiers
+    &.-noLink,
+    &.-noLink:hover {
+      text-decoration: none;
+      color: #666;
+    }
+  }
+
+  // topListSpan
+  &__topListSpan {
+    padding: 0px 0px 12px 25px;
+    display: block;
+    background: transparent url("../img/arrow-right.png") no-repeat 5px -1px/1em;
+  }
+}
+
+/* --------------------------------------- */
+
+// mNav subList elements
+.mNav {
+  // subListItem
+  &__subListItem {list-style: none;}
+
+  // subListItem pseudo-classes
+  &__subListItem:not(:last-child) {border-bottom: 1px dotted #333;}
+
+  // subListLink
+  &__subListLink {
+    display: block;
+    text-decoration: none;
+    padding: 12px 10px 12px 0;
+    background: #EEECEC;
+    color: #333;
+
+    // subListLink pseudo-classes
+    &:hover,
+    &:focus {
+      background: #DDDADA;
+      text-decoration: underline;
+      outline: none;
+    }
+
+    // subListLink modifiers
+    &.-noLink,
+    &.-noLink:hover {
+      text-decoration: none;
+      color: #666;
+    }    
+  }
+
+  // subListSpan
+  &__subListSpan {
+    padding-left: 40px;
+    display: block;
+    background: transparent url("../img/arrow-right.png") no-repeat 20px -1px/1em;
+  }
+}
+
+/* --------------- End Component Main Navigation Vertical ----------- */ 
+
+// Add a background hamburger icon to menu button
+
+
+// Todo: Make toplist collapsable but also clickable if there is a sublist
+// https://codepen.io/eye-wonder/pen/VpqQad
+// https://github.com/onokumus/metismenu/issues/39
+
+// Only add button with JS if vertical menu is shown
+// Take in consideration hover:hover and screen-width
+// See z-index option added with media-query
+// https://www.sitepoint.com/javascript-media-queries/
+
+// Make horizontal menu work on Ipad pro for example
+// https://css-tricks.com/annoying-mobile-double-tap-link-issue/
+
+/* ******************************** */
+// hamburger icon
+// https://codepen.io/mdt2/pen/VMMmNX?sa=X&ved=2ahUKEwiHpuLXt5rnAhXGJFAKHWYHB6gQFjABegQIBxAB
+// <div class="icon-one">
+//  <div class="hamburger hamburger-one"></div>
+// </div>
+
+.hamburger {
+  top:50%;
+  left:10%;
+  width: 50px;
+  height: 6px;
+  background: #FCFCFC;
+  position: absolute;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+  transition: 0.5s;
+  display: inline-block;
+}
+
+.hamburger:before {
+  top: -16px;
+}
+
+.hamburger:after {
+  top: 16px;
+}
+
+
+
+/* Icon 1 */
+.icon-one {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.hamburger-one:before,
+.hamburger-one:after {
+  content: '';
+  position:absolute;
+  width: 50px;
+  height: 6px;
+  background:#FCFCFC;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition:0.5s;
+}
+/*
+.icon-one.active-one .hamburger-one {
+  background:rgba(0,0,0,0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+}
+
+.icon-one.active-one .hamburger-one:before {
+  top: 0;
+  transform:rotate(45deg);
+}
+
+.icon-one.active-one .hamburger-one:after {
+  top: 0;
+  transform:rotate(135deg);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+*/
+.icon-one:focus .hamburger-one {
+  background:rgba(0,0,0,0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+}
+
+.icon-one:focus .hamburger-one:before {
+  top: 0;
+  transform:rotate(45deg);
+}
+
+.icon-one:focus .hamburger-one:after {
+  top: 0;
+  transform:rotate(135deg);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}

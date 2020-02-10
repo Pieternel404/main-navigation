@@ -1,0 +1,40 @@
+.wrapper {margin: 0px auto;}
+
+.wrapperRow, .wrapperRowChild {padding: 1em;}
+.wrapperRowChild {margin: -1em;} /* This creates collapsing margins  */
+/* .wrapperRow.-parent::before {z-index: -2;} ??? */
+.wrapperRow:first-child {padding-top: 0;}
+
+
+// See: http://www.independent-software.com/set-stacking-order-of-pseudo-elements-below-parent-element.html
+[class*=wrapperRow] {position: relative;}
+[class*=wrapperRow]::before {
+    content: "";
+    z-index: $zindex-pseudo-element;
+    position: absolute;
+    top: 0px;
+
+    height: 100%;
+    width: calc(100vw);
+}
+
+@media (min-width: 1171px) {
+
+    .wrapper {max-width: 1400px;}	
+
+    @media (min-width: 1171px) and (max-width: 1400px) {
+        [class*="wrapperRow"]::before {right: 0px;}
+    }
+
+    @media (min-width: 1400px) {
+        [class*="wrapperRow"]::before {right: calc(-50vw + 1400px / 2);}
+    }
+}
+
+@media (max-width: 1170px) {
+    .wrapper {max-width: 1170px;}
+
+    @media (max-width: 1170px) {
+        [class*="wrapperRow"]::before {right: 0px;}
+    }
+}

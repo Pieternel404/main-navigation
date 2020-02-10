@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<!--<script src='https://unpkg.com/focus-within-polyfill/dist/focus-within-polyfill.js'></script>	-->
+	<title>Website - All-in-one</title>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="robots" content="noindex, nofollow, noarchive" />
+	<meta name="googlebot" content="notranslate" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="css/main.css" />
+	<script src="js/script.js" defer></script>
+	<!--	<script src="js/addButton.js" defer></script>	-->
+	<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		const navButton = document.querySelector('.mNav__button');
+
+		navButton.addEventListener('click', function(){
+			let expanded = this.getAttribute('aria-expanded') === 'true';
+			this.setAttribute('aria-expanded', !expanded);
+			let menu = this.nextElementSibling;
+			menu.hidden = !menu.hidden;
+		});
+	});
+	</script>
+</head>
+
+<body>
+<div class="wrapper" tabindex="-1" style="outline: none;">
+
+	<header class="wrapperRow">
+	
+		<a class="logo" href="index.html">
+			<img class="logo__image" src="img/logo.svg" alt="logo" />
+		</a>
+
+		<div class="skipNav">
+			<a href="#articles" class="skipNav__link" tabindex="1">Direct naar artikelen.</a>
+			<a href="#footer" class="skipNav__link" tabindex="1">Direct naar footer.</a>
+		</div>
+	
+		<ul class="topList">
+			<li class="topList__Item">
+				<a class="topList__Link" href="#">FAQ</a>
+			</li>
+			<li class="topList__Item">
+				<a class="topList__Link" href="#">Customer stories</a>
+			</li>
+			<li class="topList__Item">
+				<a class="topList__Link" href="#">Contact</a>
+			</li>
+		</ul>
+
+		<nav class="mNav" id="mNav">
+			<button aria-expanded="false" class="mNav__button">MENU</button>			
+<!--			<ul hidden class="mNav__topList"> -->
+				<ul class="mNav__topList">
+					<li class="mNav__topListItem -active">
+					<span class="mNav__topListLink -noLink" tabindex="0"> <!-- -noLink is better than disabled -->
+						<span class="mNav__topListSpan">Topnav one</span>
+					</span>
+				</li>
+				<li class="mNav__topListItem">
+					<a class="mNav__topListLink" href="specialismen.html">
+						<span class="mNav__topListSpan">Topnav two</span>
+					</a>
+					<ul class="mNav__subList">
+						<li class="mNav__subListItem">
+							<a class="mNav__subListLink" href="#">
+								<span class="mNav__subListSpan">Subnavigation item two.one</span>
+							</a>
+						</li>
+						<li class="mNav__subListItem">
+							<a class="mNav__subListLink" href="#">
+								<span class="mNav__subListSpan">Subnavigation item two.two</span>
+							</a>
+						</li>
+						<li class="mNav__subListItem">
+							<a class="mNav__subListLink" href="#">
+								<span class="mNav__subListSpan">Subnavigation item two.three</span>
+							</a>
+						</li>
+						<li class="mNav__subListItem">
+							<a class="mNav__subListLink" href="#">
+								<span class="mNav__subListSpan">Subnavigation item two.four</span>
+							</a>
+						</li>
+						<li class="mNav__subListItem">
+							<a class="mNav__subListLink" href="#">
+								<span class="mNav__subListSpan">Subnavigation item two.five</span>
+							</a>
+						</li>
+						<li class="mNav__subListItem">
+							<a class="mNav__subListLink" href="#">
+								<span class="mNav__subListSpan">Subnavigation item two.six</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mNav__topListItem">
+					<a class="mNav__topListLink" href="#">
+						<span class="mNav__topListSpan">Topnav three</span>
+					</a>
+					<ul class="mNav__subList">
+						<li class="mNav__subListItem -active">
+							<span class="mNav__subListLink  -noLink" tabindex="0">
+								<span class="mNav__subListSpan">Subnavigation item three.one</span>
+							</span>
+						</li>
+						<li class="mNav__subListItem">
+							<a class="mNav__subListLink" href="#">
+								<span class="mNav__subListSpan">Subnavigation item three.two</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mNav__topListItem">
+					<a class="mNav__topListLink" href="#">
+						<span class="mNav__topListSpan">Topnav four</span>
+					</a>
+					<ul class="mNav__subList">
+						<li class="mNav__subListItem">
+							<a class="mNav__subListLink" href="#">
+								<span class="mNav__subListSpan">Subnavigation item four.one</span>
+							</a>
+						</li>
+						<li class="mNav__subListItem">
+							<a class="mNav__subListLink" href="#">
+								<span class="mNav__subListSpan">Subnavigation item four.two</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mNav__topListItem">
+					<a class="mNav__topListLink" href="#">
+						<span class="mNav__topListSpan">Topnav five</span>
+					</a>
+					<ul class="mNav__subList">
+						<li class="mNav__subListItem">
+							<a class="mNav__subListLink" href="#">
+								<span class="mNav__subListSpan">Subnavigation item five.one</span>
+							</a>
+						</li>
+						<li class="mNav__subListItem">
+							<a class="mNav__subListLink" href="#">
+								<span class="mNav__subListSpan">Subnavigation item five.two</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+
+		<!--	<button class="mNav__button" aria-expanded="false">MENU</button> -->
+
+
+	</header>
+
+	<div id="banner" class="wrapperRow"></div>
+
+	<div id="brandPositioning" class="wrapperRow">
+		<section class="myContainer sectionGroup">
+		<h1 class="sectionGroup__heading">Phasellus vehicula euismod tortor at pharetra</h1>
+		<div id="merkBeloften" class="myRow">
+			<div class="myCol2">
+			<div class="merkBelofte">
+				<div class="merkBelofte__body">
+					<h1 class="merkBelofte__heading1">Lorem ipsum</h1>
+					<p class="merkBelofte__bodyText">Mauris dignissim ex ultrices urna tincidunt, ac iaculis sem dictum. Praesent tincidunt lacus non magna sagittis, ac rhoncus metus molestie.</p>
+				</div>
+			</div>
+		</div>
+		<div class="myCol2">
+			<div class="merkBelofte">
+				<div class="merkBelofte__body">
+					<h1 class="merkBelofte__heading1">Lorem ipsum dolor</h1>
+					<p class="merkBelofte__bodyText">Sed blandit, mi sit amet porttitor rhoncus, sem nisi mollis elit, at sodales leo nulla sed nibh.</p>
+				</div>
+			</div>
+		</div>
+		<div class="myCol2">
+			<div class="merkBelofte">
+				<div class="merkBelofte__body">
+					<h1 class="merkBelofte__heading1">Praesent tincidunt lacus</h1>
+					<p class="merkBelofte__bodyText"> Maecenas auctor imperdiet neque, a viverra dolor vestibulum quis. Phasellus vehicula euismod tortor at pharetra.</p>
+				</div>
+			</div>
+		</div>
+		<div class="myCol2">
+			<div class="merkBelofte">
+				<div class="merkBelofte__body">
+					<h1 class="merkBelofte__heading1">Phasellus id nisl ante</h1>
+					<p class="merkBelofte__bodyText">Sed blandit, mi sit amet porttitor rhoncus, sem nisi mollis elit, at sodales leo nulla sed nibh.</p>
+				</div>
+			</div>
+		</div>
+		</div>
+		</section>
+	</div>
+
+	<div id="quality" class="wrapperRow">
+		<div class="sectionGroup myContainer">
+			<div class="myRow">
+				<div class="myCol3">
+					<div>
+						<h2>Lorem ipsum dolor</h2>
+						<picture class="element">
+							<source srcset="img/squirrel.png" media="(min-width: 0px)">
+							<img src="img/squirrel.png" class="img" alt="Picture of a squirrel.">
+						</picture>
+						<p class="quality__bodyText">Praesent tincidunt lacus non magna sagittis, ac rhoncus metus molestie. Morbi ut mi quis arcu molestie tempor. Donec facilisis tempus tortor, ac consectetur ante interdum et. Vivamus ut orci et dui rhoncus lacinia porta sit amet justo. Cras tincidunt justo nec ligula volutpat, non molestie lorem lacinia. Nulla vel interdum mi. Mauris commodo neque at libero tempus, eu sollicitudin metus porta.</p>
+						<p class="quality__bodyText">Mauris dignissim ex ultrices urna tincidunt, ac iaculis sem dictum. Nunc faucibus dui sem, id condimentum lectus interdum in. Integer iaculis ex vitae lorem volutpat tincidunt. Integer aliquet vestibulum tellus, ac pharetra neque faucibus a. Ut faucibus dapibus nunc, sit amet consequat sem auctor nec. Quisque ex erat, pellentesque et mi a, vulputate congue tellus. Maecenas sed rhoncus neque.</p>
+					</div>
+				</div>
+				<div class="myCol3">
+					<div>
+						<h2>Vestibulum sagittis laoreet accunsam</h2>
+						<picture class="element">
+							<source srcset="img/squirrel.png" media="(min-width: 0px)">
+							<img src="img/squirrel.png" alt="Picture of a squirrel.">
+						</picture>
+						<p class="quality__bodyText">Vestibulum sagittis laoreet accumsan. Aliquam erat volutpat. Sed dictum est a diam molestie, sed consectetur metus ultricies. Ut sollicitudin aliquam vulputate. Curabitur <a rel="external" class="textLink" href="https://www.glassbox.nl/index.html">pulvinar nulla eget</a> urna ornare, vitae feugiat nunc pharetra.</p class="quality__bodyText">
+						<p class="quality__bodyText">Phasellus id nisl ante. Sed blandit, mi sit amet porttitor rhoncus, sem nisi mollis elit, at sodales leo nulla sed nibh. Maecenas auctor imperdiet neque, a viverra dolor vestibulum quis.</p>
+						<p class="quality__bodyText">Donec eget lorem aliquet, volutpat ante non, elementum justo. Nulla tempus orci vel diam luctus, eleifend fringilla ipsum porttitor. Phasellus vehicula euismod tortor at pharetra.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div id="articles" class="wrapperRow fullWidthSolo">
+		<!--	http://html5doctor.com/the-article-element/	-->
+		<!--	Section is used here to surround a group of related content inside it. Section should also have a title!	-->
+		<section class="myContainer sectionGroup">
+			<h1 class="sectionGroup__heading">Lorem ipsum dolor sit amet, consectetur adipiscing</h1>
+			<div class="myRow">
+				<div class="myCol">
+					<div class="myCard artIntro">
+						<!--	See: https://www.smashingmagazine.com/2014/05/responsive-images-done-right-guide-picture-srcset/	-->
+						<picture class="myCard__picture">
+							<source srcset="img/buikpijn.jpg" media="(min-width: 0px)">
+							<img class="myCard__img" src="img/buikpijn.jpg" alt="Lorem ipsum dolor">
+						</picture>
+						<div class="myCard__body">
+							<heading class="myCard__heading">
+								<h1 class="myCard__heading1">Lorem ipsum dolor sit</h1>
+								<p class="myCard__pubDate">Published: <time pubdate datetime="2019-10-09">9th October, 2019</time></p>
+								<p class="myCard__bodyText -intro">Et tortor consequat id porta nibh venenatis cras.</p>
+							</heading>
+							<section>
+								<h2 class="myCard__heading2">Heading 2</h2>
+								<p class="myCard__bodyText">Nibh cras pulvinar mattis nunc sed. Imperdiet dui accumsan sit amet nulla. Sed viverra tellus in hac <a class="textLink" href="#">habitasse platea dictumst</a> vestibulum. Massa id neque aliquam vestibulum.</p>
+								<p class="myCard__bodyText">Arcu cursus euismod quis viverra. Mattis nunc sed blandit libero. Ullamcorper eget nulla facilisi etiam. Ullamcorper eget nulla facilisi etiam dignissim. Aenean euismod elementum nisi quis eleifend quam adipiscing vitae.</p>
+							</section>
+						</div>
+						<div class="myCard__buttonHolder">
+							<a href="#" class="buttonLink">Read full article</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="myCol">
+					<div class="myCard artIntro">
+						<picture class="myCard__picture">
+							<source srcset="img/bacteria-yellow.jpg" media="(min-width: 0px)">
+							<img class="myCard__img" src="img/bacteria-yellow.jpg" alt="Lorem ipsum dolor">
+						</picture>
+						<div class="myCard__body">
+							<heading class="myCard__heading">
+								<h1 class="myCard__heading1">Maecenas sed rhoncus neque</h1>
+								<p class="myCard__pubDate">Published: <time pubdate datetime="2019-10-09">9th October, 2019</time></p>
+								<p class="myCard__bodyText -intro">Nibh nisl condimentum id venenatis a condimentum vitae. Sit amet facilisi morbi.</p>
+							</heading>
+							<section>
+								<h2 class="myCard__heading2">Heading 2</h2>
+								<p class="myCard__bodyText">Nulla posuere sollicitudin aliquam ultrices sagittis orci. Nam libero justo laoreet sit amet cursus sit amet dictum.</p>
+								<p class="myCard__bodyText">Ultrices mi tempus imperdiet nulla malesuada. In pellentesque massa placerat duis ultricies lacus. Nunc consequat interdum varius sit amet mattis.</p>
+							</section>
+						</div>
+						<div class="myCard__buttonHolder">
+							<a href="#" class="buttonLink">Read full article</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="myCol">
+					<div class="myCard artIntro">
+						<picture class="myCard__picture">
+							<source srcset="img/vitamink2-foods.jpg" media="(min-width: 0px)">
+							<img class="myCard__img" src="img/vitamink2-foods.jpg" alt="Lorem ipsum dolor">
+						</picture>
+						<div class="myCard__body">
+							<heading class="myCard__heading">
+								<h1 class="myCard__heading1">Ut sollicitudin aliquam vulputate aliquam vulputate</h1>
+								<p class="myCard__pubDate">Published: <time pubdate datetime="2019-10-09">9th October, 2019</time></p>
+								<p class="myCard__pubSource">Source: University of Interdum velit</p>
+								<p class="myCard__bodyText -intro">Dictum sit amet justo donec enim diam. Eu ultrices vitae auctor eu augue ut. Ut tristique et egestas quis ipsum suspendisse ultrices.</p>
+							</heading>
+							<section>
+								<h2 class="myCard__heading2"></h2>
+								<p class="myCard__bodyText">Purus sit amet luctus venenatis lectus magna fringilla. Consectetur adipiscing elit ut aliquam.</p>
+								<p class="myCard__bodyText">Tincidunt praesent semper feugiat nibh sed. Porta nibh venenatis cras sed. Venenatis urna cursus eget nunc scelerisque. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras.</p>
+							</section>
+						</div>
+						<div class="myCard__buttonHolder">
+							<a href="#" class="buttonLink">Read full article</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="myCol">
+					<div class="myCard artIntro">
+						<picture class="myCard__picture">
+							<source srcset="img/dr-valter-longo.jpg" media="(min-width: 0px)">
+							<img class="myCard__img" src="img/dr-valter-longo.jpg" alt="Picture of Valter D. Longo">
+						</picture>
+						<div class="myCard__body">
+							<heading class="myCard__heading">
+								<h1 class="myCard__heading1">Vestibulum sagittis laoreet accumsan</h1>
+								<p class="myCard__pubDate">Published: <time pubdate datetime="2019-10-09">9th October, 2019</time></p>
+								<p class="myCard__pubSource">Source: The British Journal of blablabla</p>
+								<p class="myCard__bodyText -intro">Enim praesent elementum facilisis leo vel fringilla est ullamcorper eget. Non pulvinar neque laoreet suspendisse interdum.</p>
+							</heading>
+							<section>
+							</section>
+						</div>
+						<div class="myCard__buttonHolder">
+							<a href="#" class="buttonLink">Read full article</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="myCol">
+					<div class="myCard artIntro">
+						<picture class="myCard__picture">
+							<source srcset="img/kokkerellen.jpg" media="(min-width: 0px)">
+							<img class="myCard__img" src="img/kokkerellen.jpg" alt="Lorem ipsum dolor">
+						</picture>
+					<div class="myCard__body">
+							<heading class="myCard__heading">
+								<h1 class="myCard__heading1">Maecenas auctor imperdiet</h1>
+								<p class="myCard__pubDate">Published: <time pubdate datetime="2017-09-22">22 September, 2017</time></p>
+								<p class="myCard__pubSource">Source: Tijdschrift Blablabla blabla</p>
+								<p class="myCard__bodyText -intro">Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat. Volutpat consequat mauris nunc congue nisi vitae suscipit.</p>
+							</heading>
+							<section>
+								<h2 class="myCard__heading2"></h2>
+								<p class="myCard__bodyText">Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.</p>
+							</section>
+						</div>
+						<div class="myCard__buttonHolder">
+							<a href="#" class="buttonLink">Read full article</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+	</div>
+	
+	<footer id="footer" class="wrapperRow">
+		<div id="topFooter" class="wrapperRowChild">
+			<div class="serviceBlock myRow">
+
+			<div class="myCol4">
+				<div class="colBox">
+					<h3 class="colBox__heading">About this site</h3 cl>
+					<ul class="colBox__list">
+						<li class="colBox__listItem">
+							<a class="colBox__link" href="#">Sitemap</a>
+						</li>
+						<li class="colBox__listItem">
+							<a class="colBox__link" href="#">Accessibility</a>
+						</li>
+						<li class="colBox__listItem">
+							<a class="colBox__link" href="#">Disclaimer</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="myCol4">
+				<div class="colBox">
+					<h3 class="colBox__heading">Important for clients</h3>
+					<ul class="colBox__list">
+						<li class="colBox__listItem">
+							<a class="colBox__link" href="#">Consultation fees</a>
+						</li>
+						<li class="colBox__listItem">
+							<a class="colBox__link" href="#">Terms and conditions</a>
+						</li>
+						<li class="colBox__listItem">
+							<a class="colBox__link" href="#">Privacy statement</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="myCol4">
+				<div class="colBox">
+					<h3 class="colBox__heading">Training and specialisations</h3>
+					<ul class="colBox__list">
+						<li class="colBox__listItem">
+							<span class="colBox__span -noLink">Phasellus id nisl ante</span>
+						</li>
+							<span class="colBox__span -noLink">Phasellus id nisl ante</span class="colBox__span -noLink">
+						</li>
+						<li class="colBox__listItem">
+							<span class="colBox__span -noLink">Phasellus id nisl ante</span class="colBox__span -noLink">
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<divs class="myCol4">
+				<div class="infoColumn colBox">
+					<h3 class="colBox__heading">Get in touch!</h3>
+					<p class="colBox__bodyText"><em>Please feel free to contact me if you have any questions or want to make an appointment.</em></p>
+					<address class="colBox__address contactData">
+						<div class="colBox__addressRow">
+							<span class="colBox__addressLabel">E-mail:</span>
+							<a class="colBox__addressLink" href="#">email@email.com</a>
+						</div>
+						<div class="colBox__addressRow">
+							<span class="colBox__addressLabel">Telephone:</span>
+							<a class="colBox__addressLink" href="#">telephone number</a>
+						</div>
+						<div class="colBox__addressRow">
+							<span class="colBox__addressLabel">Location:</span>
+							<span class="addressText">Streetname 11, 1111 AA&nbsp;&nbsp;City</span></div>  
+					</address>
+				</div>
+			</div>
+
+			</div>	<!-- END serviceBlock -->
+
+		</div>
+		<div id="bottomFooter" class="wrapperRowChild"><p style="color: #F7F7F7">bottomFooter tekst</p st></div>
+	</footer>				
+</body>
+</html>

@@ -1,0 +1,115 @@
+
+// add more zindex variables for different situations
+$zindex-pseudo-element:	-1 !default;
+$zindex-dropdown:		1 !default;
+
+%positioned-pseudo-elements {
+    content: "";
+    z-index: $zindex-pseudo-element;
+    position: absolute;
+}
+/* Not useful
+@mixin positioned-pseudo-elements($zindex) {
+    z-index: (&zindex);
+    content: "";
+    position: absolute;
+}
+*/
+
+// @include positioned-pseudo-elements($zindex-dropdown)
+// THEME ONE
+// Brand colors
+
+// Donker paars
+$purple: rgb(70, 38, 98); /* #462662 */
+// Licht paars
+$violet: rgb(202, 189, 215); /* #CABDD7 */
+// Tour de France geel
+$bright-yellow: rgb(252, 184, 37); /* #FCB825 */
+
+
+
+// Website background colors
+// from dark to light
+
+$litegrey-10: rgb(247, 247, 247); /* #F7F7F7 */
+$litegrey-20: rgb(238, 236, 236); /* #EEECEC */
+$litegrey-30: rgb(221, 218, 218); /* #DDDADA */ /* hover color mainmenu */
+
+
+// Website text colors
+
+// Shades of dark grey
+// from dark to light
+
+$darkgrey-10:	rgb(153, 153, 153); /* #999 */ /* Inactive txt */
+$darkgrey-20:	rgb(51, 51, 51); /* #333 */
+
+$black:			rgb(0, 0, 0); /* #000 */
+
+$yellow-10:		rgb(194, 105, 0); /* #C26900 */
+
+
+// Background colors main part
+
+	$brandcolor-bg1: $purple;
+	$brandcolor-bg2: $violet;
+	$brandcolor-bg3: $bright-yellow;
+
+	$maincolor-bg1: $litegrey-10;
+	$maincolor-bg2: $litegrey-20;
+
+
+// Text colors
+	$color-txt: $darkgrey-20;
+	$color-txtlink: $yellow-10;
+
+
+// Mainmenu horizontal variables
+	$menucolor-bg: $litegrey-20;
+	$menucolor-bg-hover: $litegrey-30;
+	$menucolor-border: $darkgrey-20;
+	$menucolor-txt: $darkgrey-20;
+	$menucolor-inactive-txt: $darkgrey-10;
+	// Move this variable to mNav module
+
+
+
+
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:            $font-family-sans-serif !default;
+// stylelint-enable value-keyword-case
+
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg:                $font-size-base * 1.25 !default;
+$font-size-sm:                $font-size-base * .875 !default;
+
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          bolder !default;
+
+$font-weight-base:            $font-weight-normal !default;
+$line-height-base:            1.5 !default;
+
+$h1-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default;
+$h6-font-size:                $font-size-base !default;
+
+// $headings-margin-bottom:      $spacer / 2 !default;
+$headings-font-family:        null !default;
+$headings-font-weight:        500 !default;
+$headings-line-height:        1.2 !default;
+$headings-color:              null !default;
+
