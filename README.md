@@ -10,6 +10,11 @@ De opzet van de navigatie dient rekening te houden met de volgende situaties:
 - breedte scherm
 - mogelijkheden / onmogelijkheden browser
 
+Als button niet beschikbaar is (deze wordt door JS toegevoegd) dan mag er geen gebruik worden gemaakt van:
+- display: none;
+- visibility: hidden;
+- hidden;
+
 De button dient toegevoegd te worden door javascript, gebaseerd op de breedte van scherm
 https://davidwalsh.name/css-variables-javascript
 https://css-tricks.com/updating-a-css-variable-with-javascript/
